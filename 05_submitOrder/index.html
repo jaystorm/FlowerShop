@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+    <script src="Scripts/datajs-1.0.3.js"></script>
+    <script src="Scripts/jaydata.js"></script>
+    <script src="Scripts/jaydataproviders/oDataProvider.js"></script>
+
+    <script src="Scripts/knockout-2.1.0.js"></script>
+    <script src="Scripts/jaydatamodules/knockout.js"></script>
+    <link href="Scripts/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.7.2.js"></script>
+
+    <script>
+
+        function CartItem(product) {
+            this.product = product;
+            this.amount = ko.observable(0);
+            this.itemValue = ko.computed(function () {
+                return this.product.Price() * this.amount();
+            }, this);
+        }
+
+        function CartModel( mydatabase ) {
+            var self = this;
+            self.items = ko.observableArray([]);
+
+            self.value = ko.computed(function () {
+                var result = 0;
+                self.items().forEach(function (item) {
+                    result += item.itemValue();
+                });
+                return result;
+            })
+
+            self.add = function (product) {
+                var cartItem = self.items().filter(function (item) {
+                    return item.product.id() === product.id()
+                })[0];
+                if (!cartItem) {
+                    cartItem = new CartItem(product);
+                    self.items.push(cartItem);
+                }
+                cartItem.amount(cartItem.amount() + 1);
+            }
+
+            self.showSubmitOrderForm = ko.observable(false);
+            self.customerName = ko.observable();
+            self.customerAddress = ko.observable();
+
+            self.checkout = function () {
+                self.showSubmitOrderForm(true);
+            }
+
+            self.cancelCheckout = function () {
+                self.showSubmitOrderForm(false);
+            }
+
+            self.reset = function () {
+                self.items.removeAll();
+                self.showSubmitOrderForm(false);
+            }
+
+            self.submitOrder = function () {
+                //add a new customer
+                var customer = mydatabase.Customers.add({
+                    Name: self.customerName(),
+                    Address: self.customerAddress()
+                });
+                mydatabase.saveChanges(function () {
+                    //when new customer is added, add a new order
+                    var order = mydatabase.Orders.add({
+                        Customer_ID: customer.id,
+                        OrderDate: new Date(),
+                        OrderState: 1 //order is in "create" state
+                    });
+                    mydatabase.saveChanges(function () {
+                        //when the new order is created add order items
+                        self.items().forEach( function( item ) {
+                            mydatabase.OrderItems.add({
+                                Order_ID: order.id,
+                                Product_ID: item.product.id(),
+                                Amount: item.amount()
+                            });
+                        });
+                        mydatabase.saveChanges(function () {
+                            //when OrderItems are inserted modify OrderState to 2 ("ready")
+                            mydatabase.attach(order);
+                            order.OrderState = 2;
+                            mydatabase.saveChanges(self.reset);
+                        });
+                    });
+                });
+                
+            }
+        }
+
+        function ShopModel(mydatabase) {
+            var self = this;
+            self.categories = ko.observableArray([]);
+            self.selectedCategory = ko.observable();
+            self.flowerList = ko.observableArray([]);
+            
+
+            self.selectCategory = function (category) {
+                mydatabase.Flowers
+                    .filter("it.Category_ID === this.cid", { cid: category.id() })
+                    .toArray(self.flowerList);
+             
+                self.selectedCategory(category);
+            }
+
+            self.cart = new CartModel( mydatabase );
+
+            mydatabase.Categories.toArray(self.categories);
+        }
+        
+        var svcUri = "https://133e0907-f70b-4f11-92b3-dfebc9bdd6db.jaystack.net/mydatabase";
+        
+        $(function () {
+            $data.service(svcUri, function (clientFactory) {
+                ko.applyBindings(new ShopModel(clientFactory()));
+            });
+        });
+    </script>
+</head>
+<body>
+            <h3>Flower Shop!</h3>
+      
+
+    <ul class="nav nav-pills" data-bind="foreach: categories">
+        <li data-bind="attr:  {'class' : ($root.selectedCategory() === $data) ? 'active': undefined  }">
+            <a href="#" data-bind="text: CategoryName, click: $root.selectCategory"></a>
+        </li>
+    </ul>
+
+    <ul class="thumbnails" data-bind="foreach: flowerList">
+        <li class="span 4">
+            <article class="thumbnail">
+                <img style="height:160px;width:280px; overflow:hidden" data-bind="attr: {src: ImageUrl}" >
+                <h3 data-bind="text: Name"></h3>
+                <span>Price:</span><span data-bind="text: Price"></span>
+                <div class="btn btn-info" data-bind="click: $root.cart.add">Place into cart</div>
+            </article>
+        </li>
+    </ul>
+
+     <div data-bind="visible: cart.value() > 0" class="row">
+        <div  class="span2 dropdown">
+            <div class="btn dropdown-toggle" data-toggle="dropdown">
+                <span>Cart value:</span>
+                <span  data-bind="text: cart.value"></span>
+                <span class="caret"></span>
+            </div>
+        
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" data-bind="foreach: cart.items">
+                    <li>
+                        <span data-bind="text: product.Name"></span>,
+                        <span data-bind="text: amount"></span>,
+                        <span data-bind="text: itemValue"></span>
+                    </li>
+            </ul>
+       </div>
+        <span class="span2 btn btn-info" data-bind="click: cart.checkout">Checkout</span>
+    </div>
+    
+    <div data-bind="visible: cart.showSubmitOrderForm">
+        <fieldset data-bind="with: cart">
+            <legend>Customer details:</legend>
+            <h5>Name</h5>
+            <input data-bind="value: customerName" /><br />
+            <h5>Address</h5>
+            <input data-bind="value: customerAddress" /><br />
+            <span class="btn btn-info" data-bind="click: submitOrder">Submit order</span>
+            <span class="btn btn-info" data-bind="click: cancelCheckout">Cancel</span>
+        </fieldset>
+    </div>
+    
+     <script src="Scripts/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

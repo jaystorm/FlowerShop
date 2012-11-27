@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+    <script src="Scripts/datajs-1.0.3.js"></script>
+    <script src="Scripts/jaydata.js"></script>
+    <script src="Scripts/jaydataproviders/oDataProvider.js"></script>
+
+    <script src="Scripts/knockout-2.1.0.js"></script>
+    <script src="Scripts/jaydatamodules/knockout.js"></script>
+    <script src="Scripts/jquery-1.7.2.js"></script>
+
+    <script>
+
+        function ShopModel( mydatabase ) {
+            var self = this;
+            self.categories = ko.observableArray([]);
+            mydatabase.Categories.toArray(self.categories);
+
+            self.flowerList = ko.observableArray([]);
+            self.selectCategory = function (category) {
+                mydatabase.Flowers
+                    .filter("it.Category_ID === this.cid", { cid: category.id() })
+                    .toArray(self.flowerList);
+            }
+
+        }
+        
+
+        var svcUri = "https://133e0907-f70b-4f11-92b3-dfebc9bdd6db.jaystack.net/mydatabase";
+        
+        
+        $data.service(svcUri, function (serviceClientFactory) {
+            ko.applyBindings(new ShopModel(serviceClientFactory()));
+        });
+    </script>
+</head>
+<body>
+        <h1>Flower Shop!</h1>
+        <ul data-bind="foreach: categories">
+            <li>
+                <a href="#" data-bind="text: CategoryName, click: $root.selectCategory"></a>
+            </li>
+        </ul>
+        <ul data-bind="foreach: flowerList">
+            <li>
+                <img width="240" height="160" data-bind="attr: {src: ImageUrl}" >
+                <h3 data-bind="text: Name"></h3>
+                <span>Price:</span><span data-bind="text: Price"></span>
+            </li>
+        </ul>
+</body>
+</html>

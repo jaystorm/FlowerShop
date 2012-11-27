@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+    <script src="Scripts/datajs-1.0.3.js"></script>
+    <script src="Scripts/jaydata.js"></script>
+    <script src="Scripts/jaydataproviders/oDataProvider.js"></script>
+
+    <script src="Scripts/knockout-2.1.0.js"></script>
+    <script src="Scripts/jaydatamodules/knockout.js"></script>
+    <link href="Scripts/normalize.css" rel="stylesheet" />
+    <link href="Scripts/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.7.2.js"></script>
+    <script>
+
+        function ShopModel( mydatabase ) {
+            var self = this;
+            self.categories = ko.observableArray([]);
+            self.flowerList = ko.observableArray([]);
+
+            self.selectedCategory = ko.observable();
+
+            self.selectCategory = function (category) {
+                mydatabase.Flowers
+                    .filter("it.Category_ID === this.cid", { cid: category.id() })
+                    .toArray(self.flowerList);
+                self.selectedCategory(category);
+            }
+
+            mydatabase.Categories.toArray(self.categories);
+        }
+        
+        var svcUri = "https://133e0907-f70b-4f11-92b3-dfebc9bdd6db.jaystack.net/mydatabase";
+        
+        $(function () {
+            $data.service(svcUri, function (clientFactory) {
+                ko.applyBindings(new ShopModel(clientFactory()));
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>Flower Shop!</h3>
+
+    <ul class="nav nav-pills" data-bind="foreach: categories">
+        <li data-bind="attr:  {'class' : ($root.selectedCategory() === $data) ? 'active': undefined  }">
+            <a href="#" data-bind="text: CategoryName, click: $root.selectCategory"></a>
+        </li>
+    </ul>
+
+    <ul class="thumbnails" data-bind="foreach: flowerList">
+        <li class="span4">
+            <article class="thumbnail">
+                <img src="#" style="height:160px;width:280px; overflow:hidden" data-bind="attr: {src: ImageUrl}" />
+                <h3 data-bind="text: Name"></h3>
+                <span>Price:</span><span data-bind="text: Price"></span>
+            </article>
+        </li>
+    </ul>
+
+    <script src="Scripts/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
