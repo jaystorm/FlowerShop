@@ -1,0 +1,194 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "04b_cart", "04b_cart\", "{F16F39D7-FE01-48CD-9061-46D8E7D88331}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/04b_cart"
+		Debug.AspNetCompiler.PhysicalPath = "04b_cart\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\04b_cart\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/04b_cart"
+		Release.AspNetCompiler.PhysicalPath = "04b_cart\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\04b_cart\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55067"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "03_bootstrapUI", "03_bootstrapUI\", "{6181CEB8-D527-4E4D-85C8-80C146CB1CC1}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/03_bootstrapUI"
+		Debug.AspNetCompiler.PhysicalPath = "03_bootstrapUI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\03_bootstrapUI\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/03_bootstrapUI"
+		Release.AspNetCompiler.PhysicalPath = "03_bootstrapUI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\03_bootstrapUI\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55090"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "02_filterProductsByCategory", "02_filterProductsByCategory\", "{6733CD2D-0F60-4E40-BFEE-029DEDF19A1C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/02_filterProductsByCategory"
+		Debug.AspNetCompiler.PhysicalPath = "02_filterProductsByCategory\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\02_filterProductsByCategory\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/02_filterProductsByCategory"
+		Release.AspNetCompiler.PhysicalPath = "02_filterProductsByCategory\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\02_filterProductsByCategory\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55128"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "01_listCategories", "01_listCategories\", "{95DFE2D6-5AE8-4F35-90B9-AF04999638F6}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/01_listCategories"
+		Debug.AspNetCompiler.PhysicalPath = "01_listCategories\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\01_listCategories\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/01_listCategories"
+		Release.AspNetCompiler.PhysicalPath = "01_listCategories\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\01_listCategories\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55158"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "05_submitOrder", "05_submitOrder\", "{6851E162-E124-4B61-947D-B957E8465DA8}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/05_submitOrder"
+		Debug.AspNetCompiler.PhysicalPath = "05_submitOrder\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\05_submitOrder\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/05_submitOrder"
+		Release.AspNetCompiler.PhysicalPath = "05_submitOrder\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\05_submitOrder\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51481"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "06_submitOrderServerCode", "06_submitOrderServerCode\", "{81D88528-E13F-4FDB-98CD-17C1D2690BB1}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/06_submitOrderServerCode"
+		Debug.AspNetCompiler.PhysicalPath = "06_submitOrderServerCode\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\06_submitOrderServerCode\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/06_submitOrderServerCode"
+		Release.AspNetCompiler.PhysicalPath = "06_submitOrderServerCode\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\06_submitOrderServerCode\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55011"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "07_submitOrderfluid_no_swipe", "07_submitOrderfluid_no_swipe\", "{0C726457-9E7F-415B-BB14-14669CD5E856}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/07_submitOrderfluid_no_swipe"
+		Debug.AspNetCompiler.PhysicalPath = "07_submitOrderfluid_no_swipe\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\07_submitOrderfluid_no_swipe\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/07_submitOrderfluid_no_swipe"
+		Release.AspNetCompiler.PhysicalPath = "07_submitOrderfluid_no_swipe\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\07_submitOrderfluid_no_swipe\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "33929"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "07_submitOrderfluid_swipe", "07_submitOrderfluid_swipe\", "{143269AA-5D1F-499B-865B-C9A10C20CB59}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/07_submitOrderfluid_swipe"
+		Debug.AspNetCompiler.PhysicalPath = "07_submitOrderfluid_swipe\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\07_submitOrderfluid_swipe\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/07_submitOrderfluid_swipe"
+		Release.AspNetCompiler.PhysicalPath = "07_submitOrderfluid_swipe\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\07_submitOrderfluid_swipe\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "34137"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{57EBA846-D746-48CF-8DD3-E474CE9F7DFF}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.html = Readme.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F16F39D7-FE01-48CD-9061-46D8E7D88331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F16F39D7-FE01-48CD-9061-46D8E7D88331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6181CEB8-D527-4E4D-85C8-80C146CB1CC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6181CEB8-D527-4E4D-85C8-80C146CB1CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6733CD2D-0F60-4E40-BFEE-029DEDF19A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6733CD2D-0F60-4E40-BFEE-029DEDF19A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95DFE2D6-5AE8-4F35-90B9-AF04999638F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95DFE2D6-5AE8-4F35-90B9-AF04999638F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6851E162-E124-4B61-947D-B957E8465DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6851E162-E124-4B61-947D-B957E8465DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D88528-E13F-4FDB-98CD-17C1D2690BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D88528-E13F-4FDB-98CD-17C1D2690BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C726457-9E7F-415B-BB14-14669CD5E856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C726457-9E7F-415B-BB14-14669CD5E856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{143269AA-5D1F-499B-865B-C9A10C20CB59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{143269AA-5D1F-499B-865B-C9A10C20CB59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
